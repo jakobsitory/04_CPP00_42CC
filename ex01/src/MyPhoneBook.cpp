@@ -6,12 +6,21 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 09:57:16 by jschott           #+#    #+#             */
-/*   Updated: 2023/12/13 17:07:09 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:55:27 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+/**
+ * @brief Main function for the MyPhoneBook application.
+ *
+ * This function serves as the entry point for a simple phone book application. It initializes a PhoneBook instance
+ * and enters a loop to process user commands. The user can add new contacts, search for existing contacts, or exit
+ * the application. The loop continues until the user decides to exit.
+ *
+ * @return int Returns 0 upon successful completion.
+ */
 int	main()
 {
 	std::string command;

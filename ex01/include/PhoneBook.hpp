@@ -6,7 +6,7 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:21:48 by jschott           #+#    #+#             */
-/*   Updated: 2023/12/13 16:56:30 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:54:58 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,14 @@
 #include <sstream>
 #include "Contact.hpp"
 
+/**
+ * @file PhoneBook.hpp
+ * @brief Defines the PhoneBook class for managing a collection of contacts.
+ *
+ * The PhoneBook class provides functionalities to add, search, and check if the phone book is empty.
+ * It encapsulates a fixed-size array of Contact objects, representing individual contacts in the phone book,
+ * and a counter to keep track of the current number of contacts.
+ */
 class PhoneBook
 {
 private:

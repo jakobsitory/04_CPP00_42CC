@@ -6,7 +6,7 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:21:45 by jschott           #+#    #+#             */
-/*   Updated: 2023/12/13 12:46:37 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:52:22 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 #include <string>
 #include <iomanip>
 
+/**
+ * Represents a contact in an address book.
+ * 
+ * This class models a contact with various personal details. It supports creating empty contacts, populating contacts
+ * with specific details, copying details from another contact, printing contact information in a concise line or in
+ * full detail, and checking if a contact is empty (i.e., lacks any detail).
+ */
 class Contact
 {
 private:

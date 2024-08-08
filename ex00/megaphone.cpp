@@ -6,7 +6,7 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 11:03:12 by jschott           #+#    #+#             */
-/*   Updated: 2023/12/11 11:42:00 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:50:02 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 #include <string>
 #include <bits/stdc++.h> 
 
+/**
+ * A simple program that mimics a megaphone, amplifying the input text to uppercase.
+ * 
+ * @param argc The number of command line arguments.
+ * @param argv An array of character pointers representing the command line arguments.
+ * @return Returns 0 upon successful completion.
+ */
 int main(int argc, char *argv[])
 {
 	std::vector<std::string> input;

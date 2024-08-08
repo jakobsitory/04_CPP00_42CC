@@ -6,7 +6,7 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 15:21:45 by jschott           #+#    #+#             */
-/*   Updated: 2024/01/30 14:34:05 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:54:06 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 #include <vector>
 #include <string>
 
+/**
+ * Constructor that initializes a contact with details provided in an array.
+ * 
+ * @param input An array of strings containing the contact's details in the following order:
+ *              FirstName, LastName, NickName, PhoneNum, DarkSecret.
+ */
 Contact::Contact	(std::string const input[5])
 					: 
 					FirstName(input[0]), 
@@ -26,6 +32,12 @@ Contact::Contact	(std::string const input[5])
 	return;
 }
 
+/**
+ * Copies the details from another Contact object into this one.
+ * 
+ * @param src The source Contact object from which to copy the details.
+ * @return Returns 0 on success.
+ */
 int Contact::copy (Contact src)
 {
 	this->FirstName = src.FirstName;
@@ -37,7 +49,13 @@ int Contact::copy (Contact src)
 	return 0;
 }
 
-
+/**
+ * Populates the contact's details from an array of strings.
+ * 
+ * @param input An array of strings containing the contact's details in the following order:
+ *              FirstName, LastName, NickName, PhoneNum, DarkSecret.
+ * @return Returns 0 on success.
+ */
 int Contact::populate (std::string const input[5])
 {
 	this->FirstName = input[0];
@@ -49,6 +67,13 @@ int Contact::populate (std::string const input[5])
 	return 0;
 }
 
+/**
+ * Prints a concise summary of the contact's details in a single line.
+ * 
+ * This method handles formatting for long names by truncating them and appending a period.
+ * 
+ * @return Returns 0 on success.
+ */
 int Contact::print_in_line (void) const
 {
 	if (this->FirstName.find('\t') <= 10)
@@ -72,6 +97,11 @@ int Contact::print_in_line (void) const
 	return 0;
 }
 
+/**
+ * Prints all details of the contact in a readable format.
+ * 
+ * @return Returns 0 on success.
+ */
 int Contact::print_full (void) const
 {
 	std::cout << "First Name:\t" << this->FirstName << std::endl;
@@ -82,6 +112,11 @@ int Contact::print_full (void) const
 	return 0;
 }
 
+/**
+ * Checks if the contact is empty (i.e., all details are unset).
+ * 
+ * @return Returns true if empty, false otherwise.
+ */
 bool Contact::empty (void) const
 {
 	if (this->FirstName.empty() &&
@@ -93,11 +128,17 @@ bool Contact::empty (void) const
 	return false;
 }
 
+/**
+ * Default constructor.
+ */
 Contact::Contact(void)
 {
 	return;
 }
 
+/**
+ * Destructor.
+ */
 Contact::~Contact(void)
 {
 	return;

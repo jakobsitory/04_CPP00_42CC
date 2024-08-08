@@ -6,7 +6,7 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 11:00:19 by jschott           #+#    #+#             */
-/*   Updated: 2023/12/18 15:40:51 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 12:01:10 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,42 @@ int	Account::_totalNbWithdrawals = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalAmount = 0;
 
+/**
+ * @brief Returns the total number of accounts.
+ * @return int - The total number of accounts.
+ */
 int	Account::getNbAccounts( void ) {
 	return (Account::_nbAccounts);
 }
 
+/**
+ * @brief Returns the total amount across all accounts.
+ * @return int - The total amount across all accounts.
+ */
 int	Account::getTotalAmount( void ) {
 	return (Account::_totalAmount);
 }
 
+/**
+ * @brief Returns the total number of deposits made across all accounts.
+ * @return int - The total number of deposits.
+ */
 int	Account::getNbDeposits( void ) {
 	return (Account::_totalNbDeposits);
 }
 
+/**
+ * @brief Returns the total number of withdrawals made across all accounts.
+ * @return int - The total number of withdrawals.
+ */
 int	Account::getNbWithdrawals( void ) {
 	return (Account::_totalNbWithdrawals);
 }
 
+/**
+ * @brief Displays overall information about all accounts.
+ * Displays the total number of accounts, total amount across all accounts, total deposits, and total withdrawals.
+ */
 void	Account::displayAccountsInfos( void )
 {
 	Account:: _displayTimestamp ();
@@ -48,6 +68,11 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "withdrawals:" << Account::getNbWithdrawals() << std::endl;
 }
 
+/**
+ * @brief Handles deposit operations for an account.
+ * @param deposit int - The amount to be deposited into the account.
+ * Adds the deposit amount to the account's balance, increments the account's deposit count, and updates the total amount and total deposits across all accounts.
+ */
 void	Account::makeDeposit( int deposit )
 {
 	Account::_displayTimestamp();
@@ -63,6 +88,12 @@ void	Account::makeDeposit( int deposit )
 	return ;
 }
 
+/**
+ * @brief Attempts to withdraw a specified amount from the account.
+ * @param withdrawal int - The amount to be withdrawn.
+ * @return bool - True if the withdrawal was successful, false otherwise.
+ * Checks if the withdrawal amount is available. If not, the withdrawal is refused. Otherwise, it deducts the amount from the account balance, increments the withdrawal count, and updates the total withdrawals and total amount across all accounts.
+ */
 bool	Account::makeWithdrawal( int withdrawal )
 {
 	Account::_displayTimestamp ();
@@ -82,11 +113,19 @@ bool	Account::makeWithdrawal( int withdrawal )
 	return true;
 }
 
+/**
+ * @brief Returns the current balance of the account.
+ * @return int - The current account balance.
+ */
 int		Account::checkAmount( void ) const
 {
 	return (this->_amount);
 }
 
+/**
+ * @brief Displays the current status of the account.
+ * Shows the account index, current balance, number of deposits, and number of withdrawals.
+ */
 void	Account::displayStatus( void ) const
 {
 	Account::_displayTimestamp ();
@@ -96,6 +135,10 @@ void	Account::displayStatus( void ) const
 	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl; 
 }
 
+/**
+ * @brief Displays the current timestamp in a specific format.
+ * Internal function used to prefix log messages with a timestamp.
+ */
 void	Account::_displayTimestamp( void ){
 	time_t	timestamp;
 
@@ -112,6 +155,11 @@ void	Account::_displayTimestamp( void ){
 	return ;
 }
 
+/**
+ * @brief Initializes a new account with a given initial deposit.
+ * @param initial_deposit int - The initial deposit amount.
+ * Sets the initial deposit, initializes deposits and withdrawals to 0, assigns an account index based on the total number of accounts, and updates the total amount across all accounts.
+ */
 Account::Account( int initial_deposit ) {
 	this->_amount = initial_deposit;
 	this->_nbDeposits = 0;
@@ -125,6 +173,10 @@ Account::Account( int initial_deposit ) {
 	Account::_nbAccounts++;
 }
 
+/**
+ * @brief Cleans up the account object.
+ * Displays a closing message with the account index and final balance.
+ */
 Account::~Account( void )
 {
 	Account::_displayTimestamp ();
@@ -133,5 +185,3 @@ Account::~Account( void )
 	std::cout << "closed" << std::endl;
 	return ;
 }
-
-

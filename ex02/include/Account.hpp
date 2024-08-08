@@ -16,6 +16,15 @@
 //                               Account Class                                //
 // ************************************************************************** //
 
+
+/**
+ * @class Account
+ * @brief Manages individual bank accounts.
+ *
+ * The Account class provides methods for managing a bank account, including making deposits and withdrawals,
+ * checking the account balance, and displaying the account's status. It also tracks the total number of accounts,
+ * total amount deposited across all accounts, and the total number of deposits and withdrawals.
+ */
 class Account {
 
 

@@ -6,13 +6,20 @@
 /*   By: jschott <jschott@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 15:03:31 by jschott           #+#    #+#             */
-/*   Updated: 2023/12/13 17:06:03 by jschott          ###   ########.fr       */
+/*   Updated: 2024/08/08 11:56:41 by jschott          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
+/**
+ * @brief Checks if the phone book is empty.
+ * 
+ * Iterates through the phonebook_index array to check if all contacts are empty.
+ * 
+ * @return int Returns 1 if the phone book is empty, 0 otherwise.
+ */
 int PhoneBook::empty (void) const
 {
 	for (int i = 0; i < 8; i++)
@@ -23,6 +30,15 @@ int PhoneBook::empty (void) const
 	return 1;
 }
 
+/**
+ * @brief Adds a new contact to the phone book.
+ * 
+ * Prompts the user to enter contact details (first name, last name, nickname, phone number, darkest secret),
+ * creates a new Contact object with these details, and adds it to the phonebook_index array. If the phone book
+ * is full, it overwrites the oldest contact.
+ * 
+ * @return int Returns 0 on success.
+ */
 int	PhoneBook::add (void)
 {
 
@@ -47,6 +63,14 @@ int	PhoneBook::add (void)
 	return 0;
 }
 
+/**
+ * @brief Searches for a contact in the phone book.
+ * 
+ * Displays a list of all contacts in a formatted table. Prompts the user to enter the index of a contact to view
+ * detailed information. Validates the input and displays the selected contact's details.
+ * 
+ * @return int Returns 0 on success, 127 if the phone book is empty.
+ */
 int	PhoneBook::search (void) const
 {
 	std::string	input;
@@ -96,12 +120,19 @@ int	PhoneBook::search (void) const
 	return 0;
 }
 
+/**
+ * @brief Constructor for the PhoneBook class.
+ * 
+ */
 PhoneBook::PhoneBook()
 {
 	this->contact_count = 0;
 	return;
 }
 
+/**
+ * @brief Destructor for the PhoneBook class.
+ */
 PhoneBook::~PhoneBook()
 {
 	return;
