@@ -38,7 +38,7 @@ To install the project, follow these steps:
 1. Clone the repository: **`git clone git@github.com:jakobsitory/04_CPP00_42CC.git`**
 2. Navigate to the project directory: **`cd 04_CPP00_42CC`**
 3. Navigate to the excercise directory : **`cd ex00`**,  **`cd ex01`** ...
-3. Build the project: **`make`**
+4. Build the project: **`make`**
 
 ## **Usage**
 ### **ex01 - MyPhoneBook**
