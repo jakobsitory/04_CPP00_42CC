@@ -1,4 +1,4 @@
-# **C++ Module 01**
+# **C++ Module 00**
 
 This repository contains solutions to various C++ programming challenges from the 42 School curriculum. Each module is designed to deepen students' understanding of different programming concepts and techniques.
 
